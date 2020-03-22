@@ -20,6 +20,6 @@ public class Level_Script : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         print("scene changed");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //go to next scene on collision
     }
 }

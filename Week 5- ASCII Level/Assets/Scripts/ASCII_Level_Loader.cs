@@ -32,38 +32,38 @@ public class ASCII_Level_Loader : MonoBehaviour
         {
             string line = lines[y]; //get each line
 
-            char[] characters = line.ToCharArray(); //go through each char on the line
+            char[] characters = line.ToCharArray(); //go through each character in the line
 
             for (int x = 0; x < characters.Length; x++)
             {
                 GameObject newObject;
 
-                switch (characters[x])
+                switch (characters[x]) //use switch and case to change characters to sprites
                 {
                     case 'x':
                         newObject = Instantiate<GameObject>(wall);
-                        newObject.transform.SetParent(wallHolder.transform); //make the parent of th new wall, Wall Holder
+                        newObject.transform.SetParent(wallHolder.transform); //make the parent of the new wall, Wall Holder
                         newObject.transform.position =
                                 new Vector2(x + xOffset, -y + yOffset);
                         break;
                     case '%':
                         newObject = Instantiate<GameObject>(wall1);
-                        newObject.transform.SetParent(wallHolder.transform); //make the parent of th new wall, Wall Holder
+                        newObject.transform.SetParent(wallHolder.transform); //make the parent of wall1, Wall Holder
                         newObject.transform.position =
                                 new Vector2(x + xOffset, -y + yOffset);
                         break;
                     case 'P':
-                        newObject = Instantiate<GameObject>(player);
+                        newObject = Instantiate<GameObject>(player); //instantiate player
                         newObject.transform.position =
                                 new Vector2(x + xOffset, -y + yOffset);
                         break;
                     case '*':
-                        newObject = Instantiate<GameObject>(prize);
+                        newObject = Instantiate<GameObject>(prize); //instantiate prize
                         newObject.transform.position =
                                      new Vector2(x + xOffset, -y + yOffset);
                         break;
                     default:
-                        print("empty");
+                        print("empty"); //if nothing, print empty
                         break;
                 }
             }

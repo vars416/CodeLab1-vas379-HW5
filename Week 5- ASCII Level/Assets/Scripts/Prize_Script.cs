@@ -19,6 +19,6 @@ public class Prize_Script : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(gameObject);
+        Destroy(gameObject); //Destroy gameobject on collision
     }
 }
